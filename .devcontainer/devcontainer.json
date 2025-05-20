@@ -1,0 +1,25 @@
+{
+    "name": "Containerlab Environment",
+    "image": "ghcr.io/srl-labs/clab-devcontainer:latest",
+    "features": {
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
+        "version": "latest",
+        "moby": true
+      }
+    },
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.profiles.linux": {
+            "bash": {
+              "path": "/bin/bash"
+            }
+          }
+        }
+      }
+    },
+    "runArgs": ["--privileged"]
+  }
