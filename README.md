@@ -1,4 +1,4 @@
-# CEOS-lab 101
+# cEOS-lab 101
 
 ## TLDR
 
