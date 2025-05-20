@@ -1,6 +1,9 @@
 {
     "name": "Containerlab Environment",
-    "image": "ghcr.io/srl-labs/clab-devcontainer:latest",
+    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dood-slim:latest",
+    "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+],
     "features": {
       "ghcr.io/devcontainers/features/docker-in-docker:2": {
         "version": "latest",
