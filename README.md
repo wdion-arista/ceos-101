@@ -3,6 +3,7 @@
 This is a repository to help getting started with cEOS-lab in Containerlab.
 
 - Run containerlab in your local machine pointing to the YAML file URL.
+  
       ```bash
       containerlab deploy -t https://github.com/diogo-arista/ceos-101/blob/main/topology.yaml
       ```
