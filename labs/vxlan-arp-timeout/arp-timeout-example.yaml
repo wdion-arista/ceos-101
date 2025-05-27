@@ -1,0 +1,52 @@
+name: "arp-timeout-example"
+prefix: ""
+topology:
+  kinds:
+    ceos:
+      image: "ceos:4.34.1F"
+    linux:
+        image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
+  nodes:
+    sw1:
+      kind: "ceos"
+      startup-config: "configs/sw1.cfg"
+      binds:
+        - shared/:/mnt/flash/shared:rw
+    sw2:
+      kind: "ceos"
+      startup-config: "configs/sw2.cfg"
+      binds:
+        - shared/:/mnt/flash/shared:rw
+    sw3:
+      kind: "ceos"
+      startup-config: "configs/sw2.cfg"
+      binds:
+        - shared/:/mnt/flash/shared:rw
+    host1:
+      kind: "linux"
+      env:
+          IPV4: 10.10.10.101/24
+          STATIC_ROUTE: 10.0.0.0/8
+          GW: 10.10.10.1
+    host2:
+      kind: "linux"
+      env:
+          IPV4: 10.20.20.102/24
+          STATIC_ROUTE: 10.0.0.0/8
+          GW: 10.20.20.1
+  links:
+    - endpoints:
+        - "host1:eth1"
+        - "sw1:eth2"
+    - endpoints:
+        - "sw2:eth2"
+        - "host2:eth1"
+    - endpoints:
+        - "sw1:eth1"
+        - "sw2:eth1"
+    - endpoints:
+        - "sw1:eth3"
+        - "sw3:eth1"
+    - endpoints:
+        - "sw2:eth3"
+        - "sw3:eth2"
