@@ -1,74 +1,64 @@
-name: "diogo-emea-vxlan-training"
+name: "vxlan-cvx"
+prefix: ""
 topology:
+  kinds:
+    ceos:
+      image: ceos:4.34.1F
   nodes:
     leaf1:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10000:22/tcp"
     leaf2:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10001:22/tcp"
     leaf3:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10002:22/tcp"
     leaf4:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10003:22/tcp"
     spine1:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10004:22/tcp"
     spine2:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10005:22/tcp"
     host-A:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10006:22/tcp"
     host-B:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10007:22/tcp"
     host-C:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10008:22/tcp"
     host-D:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10009:22/tcp"
     Leaf5:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10010:22/tcp"
     CVX1:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10011:22/tcp"
     CVX2:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10012:22/tcp"
     CVX3:
       kind: "ceos"
-      image: "ceos:4.32.2F"
       ports:
         - "10013:22/tcp"
   links:
@@ -92,10 +82,10 @@ topology:
         - "leaf4:eth2"
     - endpoints:
         - "spine1:eth3"
-        - "leaf3:eth2"
+        - "leaf3:eth1"
     - endpoints:
         - "spine1:eth4"
-        - "leaf4:eth2"
+        - "leaf4:eth1"
     - endpoints:
         - "leaf1:eth3"
         - "host-A:eth1"
@@ -116,7 +106,7 @@ topology:
         - "host-D:eth1"
     - endpoints:
         - "Leaf5:eth1"
-        - "spine1:eth3"
+        - "spine1:eth5"
     - endpoints:
         - "Leaf5:eth2"
         - "spine2:eth5"
