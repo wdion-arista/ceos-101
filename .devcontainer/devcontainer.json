@@ -32,5 +32,6 @@
     "memory": "16gb",
     "storage": "32gb"
   },
-  "postCreateCommand": "curl -sL https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml | DOCKER_DEFAULT_PLATFORM= docker compose -f - up -d"
+  // "postCreateCommand": "curl -sL https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml | DOCKER_DEFAULT_PLATFORM= docker compose -f - up -d",
+  "postStartCommand": "echo 'Executing postStartCommand for Edgeshark...' && curl -sL https://github.com/siemens/edgeshark/raw/main/deployments/wget/docker-compose.yaml | DOCKER_DEFAULT_PLATFORM= docker compose -f - up -d && echo 'Edgeshark compose command attempted.'"
 }
