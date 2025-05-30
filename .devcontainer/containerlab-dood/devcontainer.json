@@ -1,6 +1,6 @@
 {
   "name": "Containerlab Containerlab-Docker-Ouside-Docker",
-  "image": "ghcr.io/srl-labs/containerlab/devcontainer-dood-slim:0.60.0",
+  "image": "ghcr.io/srl-labs/containerlab/devcontainer-dood:latest",
   "runArgs": [
     "--network=host",
     "--pid=host",
