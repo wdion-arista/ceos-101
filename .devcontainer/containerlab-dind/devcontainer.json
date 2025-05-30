@@ -1,5 +1,5 @@
 {
-  "name": "Containerlab ACLABS Environment",
+  "name": "Containerlab Containerlab-Docker-in-Docker Environment",
   "image": "ghcr.io/srl-labs/containerlab/devcontainer-dind:latest",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {
