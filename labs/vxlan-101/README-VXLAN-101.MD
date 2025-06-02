@@ -9,7 +9,6 @@ The network topology for this lab is shown below. You can also open the `images/
 
 <img src="images/viewport-containerlab-vxlan-101.svg" alt="VXLAN-101 Topology" width="80%">
 
-Alternatively, you can use the standard Markdown syntax, though it won't allow for size control:
 ---
 ## Prerequisites
 
