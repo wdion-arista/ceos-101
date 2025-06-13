@@ -1,14 +1,10 @@
-! Startup-config last modified at Tue May 27 20:09:08 2025 by admin
+! Startup-config last modified at Fri Jun 13 12:44:40 2025 by root
 ! device: VTEP2 (cEOSLab, EOS-4.34.1F-41910228.orinocorel (engineering build))
 !
 no aaa root
-!
 aaa authentication policy local allow-nopassword-remote-login
 !
 username admin privilege 15 role network-admin nopassword
-!
-aaa authorization exec default local
-aaa authorization commands all default local
 !
 management api http-commands
    no shutdown
@@ -27,15 +23,16 @@ system l1
    unsupported speed action error
    unsupported error-correction action error
 !
-vlan 10
-!
-vlan 20
+vlan 10,20
 !
 management api gnmi
    transport grpc default
 !
 management api netconf
    transport ssh default
+!
+aaa authorization exec default local
+aaa authorization commands all default local
 !
 interface Ethernet1
    no switchport
@@ -58,10 +55,8 @@ interface Loopback1
    ip address 10.0.2.2/32
 !
 interface Management0
-   ip address 172.20.20.2/24
-   ipv6 address 3fff:172:20:20::2/64
-   no lldp transmit
-   no lldp receive
+   ip address 172.20.20.6/24
+   ipv6 address 3fff:172:20:20::6/64
 !
 interface Vxlan1
    vxlan source-interface Loopback0
@@ -71,7 +66,6 @@ interface Vxlan1
 !
 interface Vxlan2
    vxlan source-interface Loopback1
-   vxlan udp-port 4789
    vxlan vlan 20 vni 1020
    vxlan flood vtep 10.0.2.1
 !

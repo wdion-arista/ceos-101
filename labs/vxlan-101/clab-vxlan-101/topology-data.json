@@ -1,0 +1,384 @@
+{
+  "name": "vxlan-101",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-6818e86e4823",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "mtu": 1500,
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": [],
+  "nodes": {
+    "RouterBlue": {
+      "index": "0",
+      "shortname": "RouterBlue",
+      "longname": "RouterBlue",
+      "fqdn": "RouterBlue.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/RouterBlue",
+      "kind": "ceos",
+      "image": "ceos:4.34.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:dc:39:72",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/RouterBlue",
+        "clab-node-longname": "RouterBlue",
+        "clab-node-name": "RouterBlue",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "RouterRed": {
+      "index": "1",
+      "shortname": "RouterRed",
+      "longname": "RouterRed",
+      "fqdn": "RouterRed.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/RouterRed",
+      "kind": "ceos",
+      "image": "ceos:4.34.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:6c:ca:46",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/RouterRed",
+        "clab-node-longname": "RouterRed",
+        "clab-node-name": "RouterRed",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "VTEP1": {
+      "index": "2",
+      "shortname": "VTEP1",
+      "longname": "VTEP1",
+      "fqdn": "VTEP1.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/VTEP1",
+      "kind": "ceos",
+      "image": "ceos:4.34.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:21:43:2b",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/VTEP1",
+        "clab-node-longname": "VTEP1",
+        "clab-node-name": "VTEP1",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "VTEP2": {
+      "index": "3",
+      "shortname": "VTEP2",
+      "longname": "VTEP2",
+      "fqdn": "VTEP2.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/VTEP2",
+      "kind": "ceos",
+      "image": "ceos:4.34.1F",
+      "mgmt-net": "",
+      "mgmt-intf": "Management0",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "00:1c:73:36:21:f2",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "ceos",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/VTEP2",
+        "clab-node-longname": "VTEP2",
+        "clab-node-name": "VTEP2",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host1": {
+      "index": "4",
+      "shortname": "host1",
+      "longname": "host1",
+      "fqdn": "host1.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host1",
+      "kind": "linux",
+      "image": "ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.7",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::7",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host1",
+        "clab-node-longname": "host1",
+        "clab-node-name": "host1",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host2": {
+      "index": "5",
+      "shortname": "host2",
+      "longname": "host2",
+      "fqdn": "host2.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host2",
+      "kind": "linux",
+      "image": "ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host2",
+        "clab-node-longname": "host2",
+        "clab-node-name": "host2",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host3": {
+      "index": "6",
+      "shortname": "host3",
+      "longname": "host3",
+      "fqdn": "host3.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host3",
+      "kind": "linux",
+      "image": "ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.8",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::8",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host3",
+        "clab-node-longname": "host3",
+        "clab-node-name": "host3",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    },
+    "host4": {
+      "index": "7",
+      "shortname": "host4",
+      "longname": "host4",
+      "fqdn": "host4.vxlan-101.io",
+      "group": "",
+      "labdir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host4",
+      "kind": "linux",
+      "image": "ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.9",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::9",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-6818e86e4823",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/workspaces/ceos-101/labs/vxlan-101/clab-vxlan-101/host4",
+        "clab-node-longname": "host4",
+        "clab-node-name": "host4",
+        "clab-node-type": "",
+        "clab-owner": "avd",
+        "clab-topo-file": "/workspaces/ceos-101/labs/vxlan-101/vxlan-101.clab.yaml",
+        "containerlab": "vxlan-101"
+      },
+      "port-bindings": [
+      ]
+    }
+  },
+  "links": [
+    {
+      "a": {
+        "node": "VTEP1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:66:3b:43",
+        "peer": "z"
+      },
+      "z": {
+        "node": "RouterBlue",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:b0:c5:15",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "RouterBlue",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:e8:07:21",
+        "peer": "z"
+      },
+      "z": {
+        "node": "VTEP2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:5f:43:72",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "VTEP1",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:a7:9d:05",
+        "peer": "z"
+      },
+      "z": {
+        "node": "RouterRed",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:a8:ea:b7",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "RouterRed",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:63:87:92",
+        "peer": "z"
+      },
+      "z": {
+        "node": "VTEP2",
+        "interface": "eth3",
+        "mac": "aa:c1:ab:17:ec:33",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "host1",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:dd:57:46",
+        "peer": "z"
+      },
+      "z": {
+        "node": "VTEP1",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:4e:88:1a",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "VTEP2",
+        "interface": "eth2",
+        "mac": "aa:c1:ab:d8:0b:99",
+        "peer": "z"
+      },
+      "z": {
+        "node": "host2",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:c3:d5:28",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "host3",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:ab:c6:b9",
+        "peer": "z"
+      },
+      "z": {
+        "node": "VTEP1",
+        "interface": "eth4",
+        "mac": "aa:c1:ab:bb:bc:e6",
+        "peer": "a"
+      }
+    },
+    {
+      "a": {
+        "node": "VTEP2",
+        "interface": "eth4",
+        "mac": "aa:c1:ab:a0:8a:55",
+        "peer": "z"
+      },
+      "z": {
+        "node": "host4",
+        "interface": "eth1",
+        "mac": "aa:c1:ab:8c:12:19",
+        "peer": "a"
+      }
+    }
+  ]
+}
