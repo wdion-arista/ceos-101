@@ -12,9 +12,12 @@ topology:
     VTEP1:
       kind: "ceos"
       startup-config: "configs/VTEP1.cfg"
-    Router:
+    RouterBlue:
       kind: "ceos"
-      startup-config: "configs/Router.cfg"
+      startup-config: "configs/RouterBlue.cfg"
+    RouterRed:
+      kind: "ceos"
+      startup-config: "configs/RouterRed.cfg"
     VTEP2:
       kind: "ceos"
       startup-config: "configs/VTEP2.cfg"
@@ -30,13 +33,32 @@ topology:
           IPV4: 10.10.10.102/24
           STATIC_ROUTE: 10.0.0.0/8
           GW: 10.10.10.1
+    host3:
+      kind: "linux"
+      env:
+          IPV4: 10.10.10.103/24
+          STATIC_ROUTE: 10.0.0.0/8
+          GW: 10.10.10.1
+    host4:
+      kind: "linux"
+      env:
+          IPV4: 10.10.10.104/24
+          STATIC_ROUTE: 10.0.0.0/8
+          GW: 10.10.10.1
   links:
     - endpoints:
         - "VTEP1:eth1"
-        - "Router:eth1"
+        - "RouterBlue:eth1"
     - endpoints:
-        - "Router:eth2"
+        - "RouterBlue:eth2"
         - "VTEP2:eth1"
+    - endpoints:
+        - "VTEP1:eth3"
+        - "RouterRed:eth1"
+    - endpoints:
+        - "RouterRed:eth2"
+        - "VTEP2:eth3"
+
     - endpoints:
         - "host1:eth1"
         - "VTEP1:eth2"
@@ -44,3 +66,9 @@ topology:
         - "VTEP2:eth2"
         - "host2:eth1"
 
+    - endpoints:
+        - "host3:eth1"
+        - "VTEP1:eth4"
+    - endpoints:
+        - "VTEP2:eth4"
+        - "host4:eth1"
